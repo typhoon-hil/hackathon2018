@@ -14,15 +14,15 @@ form.inline {
 .wrapper.left{
 	width:74%;
 	background-color:#f8f8f8;
-	float:left;
 	height:100%;
 }
 .wrapper.right {
 	width: 24%;
 	padding-left:15px;
-	float:left;
-	border-left:1px solid #e8e8e8;
 	min-height:1000px;
+	position: fixed;
+	top: 0;
+	right: 0;
 }
 .box {
   border-radius: 5px;
@@ -149,6 +149,10 @@ table.counters.electricity td {
 }
 .hackathon_logo svg {
 	/*transform: scale(0.8);*/
+}
+.hackathon_logo img {
+	margin-left: -10%;
+	width: 75%;
 }
 div.counters {
 	font-size:26px;
