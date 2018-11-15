@@ -25,7 +25,7 @@ def real_load(load_one: int,
               load_two: int,
               load_three: int,
               current_load: float) -> float:
-    return (load_one * 0.2 + load_two * 0.5 + load_three * 0.3) * current_load
+    return (load_one * 0.2 + load_two * 0.4 + load_three * 0.4) * current_load
 
 
 def main_grid(on: bool,
@@ -53,7 +53,8 @@ def get_physics_metrics(d: DataMessage, r: ResultsMessage,
     global penal_l1_cnt
     global penal_l2_cnt
 
-    BESS_MAX_POWER = 6
+    BESS_MAX_POWER = 5
+    BESS_CAPACITY = 20
 
     penal = 0.0
     if r.power_reference > BESS_MAX_POWER:
@@ -102,7 +103,7 @@ def get_physics_metrics(d: DataMessage, r: ResultsMessage,
 
         current_power = r.power_reference
 
-        soc_bess = d.bessSOC - r.power_reference / (CFG.sampleRate * 10)
+        soc_bess = d.bessSOC - r.power_reference / (CFG.sampleRate * BESS_CAPACITY)
 
         overload = False
     elif not d.grid_status:
@@ -112,7 +113,7 @@ def get_physics_metrics(d: DataMessage, r: ResultsMessage,
         current_power = main_grid(False, r_load, r.power_reference,
                                   d.solar_production, r.pv_mode)
 
-        soc_bess = d.bessSOC - current_power / (CFG.sampleRate * 10)
+        soc_bess = d.bessSOC - current_power / (CFG.sampleRate * BESS_CAPACITY)
 
         if abs(current_power) > BESS_MAX_POWER or (soc_bess >= 1 and current_power < 0) \
            or (soc_bess <= 0 and current_power > 0):

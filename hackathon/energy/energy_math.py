@@ -42,7 +42,7 @@ def current_load(t: float, load_scaling=1.0, load_scaling_prev=1.0) -> float:
 
 def solar_produciton(t: float, solar_scaling=1.0) -> float:
     if 7 <= t < 19:
-        return (solar_scaling * 2) * (cos(1/6 * pi * (t - 13)) + 1)
+        return (solar_scaling * 2.5) * (cos(1/6 * pi * (t - 13)) + 1)
     elif 0 <= t < 7 or 19 <= t <= 24:
         return 0
     else:
