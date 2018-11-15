@@ -18,7 +18,7 @@ PENAL_L1_CONT = 1
 PENAL_L2_INIT = 4
 PENAL_L2_CONT = 0.4
 
-PENAL_L3_CONT = 0.1
+PENAL_L3_CONT = 0.3
 
 
 def real_load(load_one: int,
@@ -124,7 +124,7 @@ def get_physics_metrics(d: DataMessage, r: ResultsMessage,
             overload_cnt = 0
 
         if overload_cnt > 1:
-            penal = 25.5
+            penal = PENAL_L1_INIT + PENAL_L1_CONT + PENAL_L2_INIT + PENAL_L2_CONT + PENAL_L3_CONT
             current_power = 0
             r.load_one = False
             r.load_two = False
