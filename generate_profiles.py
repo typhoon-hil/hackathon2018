@@ -9,13 +9,13 @@ __license__ = "MIT"
 
 def generate_profiles():
     # Training profiles
-    LOAD_SCALES = [1.0, 1.1, 0.8, 1.2, 0.9]
-    SOLAR_SCALES = [1.3, 0.5, 0.8, 0.9, 1.1]
-    BLACKOUTS = [[[11, 11.75]],
-                 [],
-                 [[2.5,3]],
-                 [[20,21]],
-                 [],
+    LOAD_SCALES = [1.0, 0.8, 0.9, 1.2, 0.8]
+    SOLAR_SCALES = [1.0, 1.5, 1.2, 0.5, 0.6]
+    BLACKOUTS = [[[17.75, 18]],
+                 [[12.75, 13.50]],
+                 [[2.75, 3]],
+                 [[20, 20.50]],
+                 [[19.50, 20.50]],
                  ]
 
     PROFILES = []
