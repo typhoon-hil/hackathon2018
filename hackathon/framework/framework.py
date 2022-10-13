@@ -58,6 +58,7 @@ def run(args) -> None:
     config_outs(args, 'framework')
 
     data_emit_socket, _ = bind_pub_socket(CFG.in_address, CFG.in_port)
+    vtn_emit_socket, _ = bind_pub_socket(CFG.in_address_vtn, CFG.in_port_vtn)
     result_gather_socket, _ = bind_sub_socket(CFG.out_address, CFG.out_port)
     results_poll = zmq.Poller()
     results_poll.register(result_gather_socket, zmq.POLLIN)
@@ -111,6 +112,12 @@ def run(args) -> None:
         if CFG.DBG:
             print('Framework emits {}'.format(data))
 
+        # If there is change in buying price, let OpenADR VTN know...
+        if i > 0 and rec['buyingPrice'] != last['DataMessage']['buying_price']:
+            print("Ping vtn to send openadr price event")
+            vtn_emit_socket.send_pyobj(data)
+            time.sleep(1) # Sleep for 1 second to give time to OpenADR client to poll for new price message.
+
         data_emit_socket.send_pyobj(data)
         rater(result_gather_socket, results_poll, data)
 
@@ -129,3 +136,4 @@ def run(args) -> None:
         print('Simple HTTP server has stopped.')
     else:
         print('Simple HTTP server is still running...')
+

@@ -17,6 +17,12 @@ cd <dir_where_this_repo_is_cloned>
 pip install -r requirements.txt
 ```
 
+First run OpenADR Server (VTN)
+
+``` shell
+python3 run_openadr.py
+```
+
 Then run the proposed solution with:
 
 ``` shell

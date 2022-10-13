@@ -182,8 +182,10 @@ class Config:
 
         self.in_port = safe_int(sockets('inPort')) # type: Optional[int]
         self.out_port = safe_int(sockets('outPort')) # type: Optional[int]
+        self.in_port_vtn = safe_int(sockets('inPortVTN')) # type: Optional[int]
         self.in_address = sockets('inAddress') # type: Optional[str]
         self.out_address = sockets('outAddress') # type: Optional[str]
+        self.in_address_vtn = sockets('inAddressVTN') # type: Optional[str]
         self.results = safe_path(
             results('resultsFile')) # type: Optional[str]
         self.results_dump = self.get_dump_name(

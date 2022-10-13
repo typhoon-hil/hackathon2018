@@ -40,6 +40,27 @@ class Control:
             else:
                 return
 
+    def get_data_non_blocking(self) -> Generator[DataMessage, None, None]:
+        import time
+        sleep_time = 0.5
+
+        """Get data from the framework.
+
+        Generator containing data is being returned.
+
+        """
+        while True:
+            try:
+                msg = self.in_socket.recv_pyobj(flags=zmq.NOBLOCK)
+                if msg:
+                    yield msg
+                    sleep_time = 0.001 # once we get first message from framework - sleep is deprived
+                else:
+                    return
+            except zmq.Again as e:
+                time.sleep(sleep_time)
+                continue
+
     def push_results(self, obj: ResultsMessage) -> None:
         """Send message that contains results calculated by the solution back
         to the framework.

@@ -4,6 +4,7 @@ viz/.tern-port
 .typhoon/
 /graphs.py
 .idea/
+.env/
 /data/profiles.json
 data/results.json
 data/results.out
