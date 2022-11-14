@@ -17,7 +17,7 @@ mkdir C:/hackathon2022
 
 Unpack solution from this repo hackathon_solution.tar to solution directory. 
 
-Load image from this repo and start it:
+Download image from this repo release binary, load it in docker and start it:
 ``` shell
 docker load uegos-docker-image.tar
 sh start-database.sh
