@@ -18,21 +18,35 @@ If you have Windows, you will need to install Windows Subsystem for Linux by fol
 If you are running an older build of Windows, you will maybe need to follow these instruction https://learn.microsoft.com/en-us/windows/wsl/install-manual
 
 ## Create solution directory
-Create directory for solution (if you want to use different directory you need to modify docker run command later)
+Create directory for solution (if you want to use different directory you need to modify docker run command later).
+If you are on Windows:
 ``` shell
 md c:\hackathon2022
+```
+
+If you are on Linux or Mac:
+``` shell
+mkdir home/you_user_name/hackathon2022
 ```
 Unpack solution from this repo hackathon_solution.tar to solution directory. This directory will be mounted as volume when you start docker container.
 
 Download image from https://github.com/typhoon-hil/hackathon2022/releases/download/test_release2/uegos-docker-image.tar then open power shell in a file where the image is downloaded. Load it in docker and start it. To load the image and start it, follow these commands.
+If you are on Windows:
 ``` shell
 docker load --input uegos-docker-image.tar
 docker run -e MONGO_INITDB_ROOT_USERNAME=uegos -e MONGO_INITDB_ROOT_PASSWORD=uegos -e MONGO_INITDB_DATABASE=uegos --name uegos-db -d mongo
 docker run --link uegos-db -p 8080:8080 -v c:/hackathon2022:/app/gateway/plugins/hackathon_solution --name uegos -d uegos
 ```
 
+If you are on Linux or Mac:
+``` shell
+docker load --input uegos-docker-image.tar
+docker run -e MONGO_INITDB_ROOT_USERNAME=uegos -e MONGO_INITDB_ROOT_PASSWORD=uegos -e MONGO_INITDB_DATABASE=uegos --name uegos-db -d mongo
+docker run --link uegos-db -p 8080:8080 -v home/you_user_name/hackathon2022:/app/gateway/plugins/hackathon_solution --name uegos -d uegos
+```
+
 # UEGOS
-Open localhost:8080/hackathon to see visualization of 7 days energy consumption. You can run simulation of your solution several times using the GUI button - Restart button at the bottom left corner. Each time, values will be slightly changed due to some random parameters like irradiance, blackouts and 'working from home' day.
+Open http://localhost:8080/signin and login with credential (username: admin, password: 12345678). Then navigate to hackathon page (http://localhost:8080/hackathon) to see visualization of 7 days energy consumption. You can run simulation of your solution several times using the GUI button - Restart button at the bottom left corner. Each time, values will be slightly changed due to some random parameters like irradiance, blackouts and 'working from home' day.
 
 Each time you modify solution you should restart UEGOS docker container (with stop and play buttons in Docker Desktop) for changes to take effect. 
 
