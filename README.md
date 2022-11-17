@@ -66,4 +66,5 @@ Electricity price is cheap (2) from 23h to 7h. Otherwise its expensive tariff (7
 Selling (feed in) price is better (5) from 13h to 15h, otherwise its low (2).
 
 # YOUR SOLUTION
-From the hackathon2022 folder open hackathon_solution.py in the code editor you prefer. Your solution should be written in function def uegos_send_data(systemData). 
+The goal is to optimise cost. Will continue...
+From the hackathon2022 folder ( the one which you exported) open hackathon_solution.py in the code editor you prefer. Your solution should be written in function def uegos_send_data(systemData). 
