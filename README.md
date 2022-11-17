@@ -2,7 +2,7 @@
 This document contains instructions to setup hackathon environment, and explanation of hackathon task.
 
 # Setup environment
-Firstly, clone this project:
+Firstly, open power shell and clone this project:
 
 ``` shell
 git clone https://github.com/typhoon-hil/hackathon2022.git
@@ -24,7 +24,7 @@ md c:\hackathon2022
 ```
 Unpack solution from this repo hackathon_solution.tar to solution directory. This directory will be mounted as volume when you start docker container.
 
-Download image from https://github.com/typhoon-hil/hackathon2022/releases/download/test_release/uegos-docker-image.tar, load it in docker and start it:
+Download image from https://github.com/typhoon-hil/hackathon2022/releases/download/test_release/uegos-docker-image.tar, then open power shell in a file where the image is downloaded. Load it in docker and start it. To load the image and start it, follow these commands.
 ``` shell
 docker load --input uegos-docker-image.tar
 docker run -e MONGO_INITDB_ROOT_USERNAME=uegos -e MONGO_INITDB_ROOT_PASSWORD=uegos -e MONGO_INITDB_DATABASE=uegos --name uegos-db -d mongo
@@ -50,3 +50,6 @@ PV power is random each day depending on weather. Blackouts are random throughou
 
 Electricity price is cheap (2) from 23h to 7h. Otherwise its expensive tariff (7).
 Selling (feed in) price is better (5) from 13h to 15h, otherwise its low (2).
+
+# YOUR SOLUTION
+From the hackathon2022 folder open hackathon_solution.py in the code editor you prefer. Your solution should be written in function def uegos_send_data(systemData). 
