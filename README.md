@@ -1,6 +1,8 @@
 # Python hackathon
 This document contains instructions to set up the hackathon environment, and an explanation of the hackathon task. Please, read it carefully and follow the instructions. 
 
+# Setup environment
+
 ## Install Docker
 Install Docker if you don't have it already.
 
@@ -13,8 +15,6 @@ If you are running an older build of Windows, you will maybe need to follow thes
 Open the Docker Desktop and check if the Docker Engine is running. If Docker Engine is running you should see a green tab like in the picture below. Otherwise, it will be red and in this case, you should restart your machine, and try again.
 
 ![image](https://user-images.githubusercontent.com/118435788/202661114-42f53673-4b20-4790-a340-930108c8b512.png)
-
-# Setup environment
 
 ## Clone the hackathon project
 Open the power shell and clone this project with the next command:
