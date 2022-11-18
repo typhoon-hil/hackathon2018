@@ -10,7 +10,7 @@ If you have Windows, you will need to install Windows Subsystem for Linux by fol
 
 If you are running an older build of Windows, you will maybe need to follow these instructions https://learn.microsoft.com/en-us/windows/wsl/install-manual
 
-Open the Docker Desktop and check if the Docker Engine is running. If Docker Engine is running you should see a green tab like in the picture belowbelow. Otherwise, it will be red and in this case, you should restart your machine, and try again.
+Open the Docker Desktop and check if the Docker Engine is running. If Docker Engine is running you should see a green tab like in the picture below. Otherwise, it will be red and in this case, you should restart your machine, and try again.
 
 ![image](https://user-images.githubusercontent.com/118435788/202661114-42f53673-4b20-4790-a340-930108c8b512.png)
 
