@@ -15,6 +15,8 @@ Open the Docker Desktop and check if the Docker Engine is running. If Docker Eng
 ![image](https://user-images.githubusercontent.com/118435788/202661114-42f53673-4b20-4790-a340-930108c8b512.png)
 
 # Setup environment
+
+## Clone the hackathon project
 Open the power shell and clone this project with the next command:
 
 ``` shell
@@ -49,7 +51,7 @@ docker run -e MONGO_INITDB_ROOT_USERNAME=uegos -e MONGO_INITDB_ROOT_PASSWORD=ueg
 docker run --link uegos-db -p 8080:8080 -v home/you_user_name/hackathon2022:/app/gateway/plugins/hackathon_solution --name uegos -d uegos
 ```
 
-# UEGOS
+# UEGOS 
 Open http://localhost:8080/signin and login with credential (username: admin, password: 12345678). Then navigate to hackathon page (http://localhost:8080/hackathon) to see visualization of 7 days energy consumption. You can run simulation of your solution several times using the GUI button - **Restart** button at the bottom left corner. Each time, values will be slightly changed due to some random parameters like irradiance, blackouts and 'working from home' day.
 
 Each time you modify solution you should **restart UEGOS docker container** (with stop and play buttons in Docker Desktop) for changes to take effect. 
@@ -62,7 +64,7 @@ PV power is random each day depending on the weather. Blackouts are random throu
 
 The electricity price is cheap from 23h to 7h, and it has a value of 2$. Otherwise, it has an expensive tariff, which value is 7$. The selling (feed-in) price is better from 13h to 15h and has a value of 5$. Otherwise, it is low, and it has a price of 2$.
 
-# YOUR SOLUTION
+# Your solution
 The task for participants is to design a control system in that way the cost of the smart energy management house is minimized.
 From the *hackathon2022* folder open *hackathon_solution.py* in the code editor you prefer. Your solution should be written in function *def uegos_send_data(systemData)*. # will add more details...
 
