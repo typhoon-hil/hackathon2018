@@ -53,7 +53,7 @@ docker run --link uegos-db -p 8080:8080 -v home/you_user_name/hackathon2022:/app
 ```
 
 # 2. Hackathon task 
-(UEGOS what is)
+The UEGOS is an operating system which is designed to allow aggregators, distribution system operators (DSOs), balance responsible parties (BRPs), virtual power plant (VPP) operations, and building architecture, engineering, construction, owner and operation (AECOO) entities and homeowners to install it on existing or new gateways. That way, UEGOS represents a communication solution that enables DSOs, BRPs, VPPs and other parties to quickly start monitoring and controlling their smart energy devices and appliances regardless of the communication protocol they are using, thus enabling them to utilize the flexibility of these devices and appliances to create new revenue streams, reduce CAPEX and OPEX and/or defer costly grid upgrades.
 
 
 ## 2.1 UEGOS - Universal Energy Gateway Operating System
