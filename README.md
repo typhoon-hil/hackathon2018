@@ -65,14 +65,30 @@ Each time you modify solution you should **restart UEGOS docker container** (wit
 The Hackathon framework is simulating energy consumption in a house during 7 days period. The framework is emitting data to the solution for each hour. The solution needs to decide how devices will behave in the following hour. The loads can be 'on' and 'off' and the car battery can be in 'charge', 'use', or 'idle' mode.
 
 House can be supplied by the grid, pv panel, or by battery. House have two loads, further in text Load1 and Load2.
-The user goes to work Monday through Friday and stays at home for the weekend. There is a 10% chance that the user will work from home each of the 5 workdays. If the user goes to work, the car battery is drained 45% and loads are turned off from 9h to 17h. The user expects loads to be powered on at certain times throughout the day, if they are not, penalties are rewarded. Load1 is expected to be used on the workday: from 7h - 9h and 17h - 23h, and on the home day from 7h - 23h. Load2 is expected to be used on a workday from 6h - 9h and 19h - 23h, and on the home day from 9h - 22h. Load1 penalty is ?, and load2 penatly is ?. 
+The user goes to work Monday through Friday and stays at home for the weekend. There is a 10% chance that the user will work from home each of the 5 workdays. If the user goes to work, the car battery is drained 45% and loads are turned off from 9h to 17h. The user expects loads to be powered on at certain times throughout the day, if they are not, penalties are rewarded. Load1 is expected to be used on the workday: from 7h - 9h and 17h - 23h, and on the home day from 7h - 23h. Load2 is expected to be used on a workday from 6h - 9h and 19h - 23h, and on the home day from 9h - 22h. 
 If the user has to go to work but the car battery is under 50% he is forced to stay at home and car penalties are applied. Note: car penalties are not applied if the user decides to stay at home by himself that day.
 PV power is random each day depending on the weather. Blackouts are random throughout the week.
 
 The electricity price is cheap from 23h to 7h, and it has a value of 2$. Otherwise, it has an expensive tariff, which value is 7$. The selling (feed-in) price is better from 13h to 15h and has a value of 5$. Otherwise, it is low, and it has a price of 2$.
 
-Input data are stored in *systemData* and they are :
-![image](https://user-images.githubusercontent.com/118435788/203527962-32401817-3bca-4517-89a9-f0684e6c9228.png)
+Input data are stored in *systemData* and they are listed below:
+ 'car_plugged' : 0 or 1,
+ 'car_battery_SOC': in range [0.0, 100.0]%,
+ 'blackout': 0 or 1,
+ 'expected_load1',
+ 'expected_load2', 
+ 'actual_load1',
+ 'actual_load2',
+ 'electricity_price': 2$ or 7$,
+ 'feed_in_price': 2$ or 5$,
+ 'car_load',
+ 'grid_intake',
+ 'load1_penalty': 45$,
+ 'load2_penalty': 105$,
+ 'car_penalty': 1600$,
+ 'pv_power'.
+ 
+ Data values that omitted can be read from diagrams on the hackathon board.
 
 
 ## 2.3 Your solution
