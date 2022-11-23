@@ -93,9 +93,8 @@ Input data are stored in *systemData* and they are:
 
 ## 2.3 Your solution
 The task for participants is to design a control system in that way the cost of the smart energy management house is minimized.
-From the *hackathon2022* folder open *hackathon_solution.py* in the code editor you prefer. Your solution should be written in function *def uegos_send_data(systemData)*. You need to set output data which are stored in response and they are 'l1' (0 or 1), 'l2' (0 or 1) and 
-'carBattery' which can have three states : charge, idle and use.
-will add more details, where to upload...
+From the *hackathon2022* folder open *hackathon_solution.py* in the code editor you prefer. Your solution should be written in function *def uegos_send_data(systemData)*. You need to set output data which are stored in response. 
+
 
 **Before you start working on your solution consider the proposed
 solution architecture.**
