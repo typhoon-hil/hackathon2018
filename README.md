@@ -71,7 +71,8 @@ PV power is random each day depending on the weather. Blackouts are random throu
 
 The electricity price is cheap from 23h to 7h, and it has a value of 2$. Otherwise, it has an expensive tariff, which value is 7$. The selling (feed-in) price is better from 13h to 15h and has a value of 5$. Otherwise, it is low, and it has a price of 2$.
 
-Input data are stored in *systemData* and they are : ![image](https://user-images.githubusercontent.com/118435788/203527962-32401817-3bca-4517-89a9-f0684e6c9228.png)
+Input data are stored in *systemData* and they are :
+![image](https://user-images.githubusercontent.com/118435788/203527962-32401817-3bca-4517-89a9-f0684e6c9228.png)
 
 
 ## 2.3 Your solution
