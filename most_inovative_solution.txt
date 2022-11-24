@@ -1,3 +1,0 @@
-Teams Lambda and Data Vaders used machine learning methods for solution.
-Data Vaders team was choosen to take most inovative award beacuse their solution is 
-determined to be more scalable.
